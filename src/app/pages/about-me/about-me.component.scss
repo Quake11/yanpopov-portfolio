@@ -1,0 +1,9 @@
+.social-links {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  > a {
+    margin: 0 10px !important;
+  }
+}

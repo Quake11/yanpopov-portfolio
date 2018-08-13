@@ -1,0 +1,28 @@
+#printer {
+  width: 400px;
+  max-width: 90vw;
+  overflow: visible;
+
+  .animate-up,
+  .animate-toright,
+  .animate-down,
+  .animate-toleft {
+    opacity: 0;
+  }
+
+  .detail {
+    opacity: 0;
+  }
+
+  .button {
+    cursor: pointer;
+  }
+}
+
+#cylinder {
+  transition: 700ms ease-in;
+
+  &.printed {
+    transform: translate(-290px, 100px);
+  }
+}

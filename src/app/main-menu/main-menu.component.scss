@@ -1,0 +1,81 @@
+@import '~variables.scss';
+
+.mat-tab-link {
+  color: white;
+  opacity: 0.8;
+}
+
+.navigation.scrolled {
+  opacity: 1;
+}
+
+.navigation:not(.scrolled) {
+  /* background: rgba(147, 148, 148, .7); */
+  opacity: 0.7;
+}
+
+.navigation {
+  transition: 0.3s ease-in-out;
+  position: fixed;
+  height: auto;
+  z-index: 100;
+}
+
+.tabs {
+}
+
+.navigation-onscroll {
+  background: #000;
+}
+
+.mat-tab-link-onscroll {
+  background: #000;
+  opacity: 1;
+}
+
+mat-toolbar {
+  justify-content: center;
+  height: 64px;
+  z-index: 100;
+  button {
+    position: absolute;
+    left: 20px;
+    mat-icon {
+      font-size: 2.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      line-height: 2.5rem;
+    }
+  }
+}
+
+mat-nav-list {
+  display: flex;
+
+  a {
+    cursor: pointer;
+    outline: none;
+    transition: background-color 180ms ease-out;
+
+    &:hover {
+      background-color: rgba(mat-color($app-accent), 0.8);
+    }
+
+    &.active {
+      border-bottom: 3px solid;
+      border-color: mat-color($app-accent);
+      background-color: rgba(mat-color($app-accent), 0.3);
+    }
+  }
+
+  &.pc {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  &.mobile {
+    flex-direction: column;
+    a {
+      padding: 0 20px;
+    }
+  }
+}

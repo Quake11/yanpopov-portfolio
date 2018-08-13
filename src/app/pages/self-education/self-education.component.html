@@ -1,0 +1,93 @@
+<main>
+  <section class="primary header">
+    <h1 class="mat-headline">Самообразование</h1>
+    <app-pc-desk></app-pc-desk>
+  </section>
+
+  <section style="flex-direction: column;">
+    <h2 class="mat-headline  from-bottom" inViewport (inViewportAction)="onIntersection($event)" style="flex-basis: unset;font-size: 2.5rem;">2016 год</h2>
+
+    <div class="year">
+      <div style="display:flex;flex-direction:column;flex-basis: 400px;" class="from-left" inViewport (inViewportAction)="onIntersection($event)">
+        <h3 class="mat-h3" style="font-size: 1.5rem">
+          <strong>Тема проекта по самообразованию:</strong>
+        </h3>
+        <h3 class="mat-h3">“Использование конструктора Lego Technic Перворобот NXT на уроках информатики в центре дистанционного обучения для
+          детей-инвалидов”
+        </h3>
+      </div>
+
+      <div class="aspect-ratio from-right" inViewport (inViewportAction)="onIntersection($event)">
+        <div class="preview" #preview (click)="updateSrc(videoFrame, 'https://www.youtube.com/embed/JUQXgoLz2w4?rel=0', preview)">
+          <img src="assets/self-education/project-lego-preview.jpg" alt="Превью изображение для видео" />
+          <svg version="1.1" viewBox="0 0 68 48">
+            <path class="ytp-large-play-button-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+              fill="#212121" fill-opacity="0.8"></path>
+            <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+          </svg>
+        </div>
+        <iframe #videoFrame frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <a mat-stroked-button color="primary" href="https://drive.google.com/drive/folders/1UbBmM9K7CtmRva6zYre8kcIO289Hq2hl" target="_blank"
+      class="from-bottom" inViewport (inViewportAction)="onIntersection($event)">
+      Материалы
+    </a>
+  </section>
+
+
+  <section class="primary" style="flex-direction: column">
+    <h2 class="mat-headline from-bottom" inViewport (inViewportAction)="onIntersection($event)" style="flex-basis: unset;font-size: 2.5rem;">2018 год</h2>
+
+    <div class="year presentations from-bottom" inViewport (inViewportAction)="onIntersection($event)">
+      <div class="presentation" *ngFor="let presentation of presentations">
+        <h3 class="mat-h3"> {{ presentation.title }}</h3>
+        <div class="aspect-ratio">
+          <div class="preview" #preview (click)="updateSrc(frame, presentation.url, preview)">
+            <img [src]="presentation.img" alt="Превью изображение для презентации" />
+            <svg version="1.1" viewBox="0 0 68 48">
+              <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+            </svg>
+          </div>
+          <iframe [hidden]="!frame.src" #frame width="760px" height="500px" frameborder="0" marginheight="0" marginwidth="0" max-width="100%"
+            sandbox="allow-forms allow-modals allow-orientation-lock allow-popups allow-same-origin allow-scripts" scrolling="no"
+            style="border: none; max-width: 100%; max-height: 100vh" allowfullscreen mozallowfullscreen msallowfullscreen webkitallowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <a mat-stroked-button color="warn" href="https://drive.google.com/drive/folders/1Uga1dXVO2H5xiGku2kEwRHoufQHKCTee" target="_blank"
+      class="from-bottom" inViewport (inViewportAction)="onIntersection($event)">
+      Материалы
+    </a>
+  </section>
+
+  <section style="flex-direction: column">
+    <div class="year presentations">
+      <div class="from-left" style="display: flex;flex-direction: column;align-items: center;" inViewport (inViewportAction)="onIntersection($event)">
+        <h2 style="flex:1" class="mat-headline">Разработки курсов по 3D-печати и 3D-моделированию</h2>
+        <img src="assets/self-education/3d.jpg" alt="Фото 3D-моделирование" style="height: 180px;margin: 10px 0 20px;
+            max-width: 95vw;" />
+      </div>
+
+      <ngu-carousel [inputs]="carouselPhotos" class="from-right" inViewport (inViewportAction)="onIntersection($event)">
+        <ngu-item NguCarouselItem class="bannerStyle" *ngFor="let photo of photos">
+          <img [src]="photo.url" alt="Фото 3D-моделирование" />
+        </ngu-item>
+        <button NguCarouselPrev mat-mini-fab color="primary" class='leftRs' aria-label="Предыдущее видео">
+          <mat-icon>arrow_back_ios</mat-icon>
+        </button>
+        <button NguCarouselNext mat-mini-fab color="primary" class='rightRs' aria-label="Следующее видео">
+          <mat-icon>arrow_forward_ios</mat-icon>
+        </button>
+      </ngu-carousel>
+    </div>
+
+
+    <a mat-stroked-button color="warn" href="https://drive.google.com/drive/folders/0B5wIFvFgJ7GNLWJ5bFliOGdvM2s" target="_blank"
+      class="from-bottom" inViewport (inViewportAction)="onIntersection($event)">
+      Материалы
+    </a>
+  </section>
+</main>

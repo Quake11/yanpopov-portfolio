@@ -1,0 +1,8 @@
+svg {
+  width: 300px;
+
+  .animate-bounce-up {
+    /* opacity: 0; */
+    transform: translateX(-100vh);
+  }
+}

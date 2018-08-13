@@ -1,0 +1,17 @@
+<main>
+  <section class="primary header">
+    <h1 class="mat-headline">Информатика</h1>
+    <img @fadeInFromBottom src="assets/svg/informatic_pic.svg" style="width: 200px" alt="Логотип страницы Информатика">
+  </section>
+
+  <section>
+    <div class="class-list" [@list]="classes.length" role="ßlist">
+      <a *ngFor="let class of classes; let i = index" [href]="class.url" [class]="'mat-elevation-z1 class-url-' + i" (mouseover)="mouseOver($event)"
+        (mouseout)="mouseOut($event)" target="_blank" role="listitem">
+        {{ class.name }}
+        <mat-icon svgIcon="external"></mat-icon>
+      </a>
+    </div>
+  </section>
+
+</main>

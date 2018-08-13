@@ -1,0 +1,65 @@
+section > h2 {
+  flex-basis: unset !important;
+}
+
+.bannerStyle h1 {
+  background-color: #ccc;
+  min-height: 300px;
+  text-align: center;
+  line-height: 300px;
+}
+
+ngu-carousel {
+  ngu-item {
+    .aspect-ratio {
+      max-width: 600px;
+      max-height: 338px;
+      width: 90vw;
+      height: 50.85vw;
+      margin: 0 auto;
+
+      .preview {
+        width: 100%;
+        height: auto;
+        position: relative;
+
+        svg {
+          width: 70px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          z-index: 100;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      iframe,
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .leftRs,
+  .rightRs {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+  }
+
+  .leftRs {
+    left: 0;
+    mat-icon {
+      width: 16px;
+    }
+  }
+
+  .rightRs {
+    right: 0;
+    mat-icon {
+      width: 20px;
+    }
+  }
+}

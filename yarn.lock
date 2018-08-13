@@ -26,9 +26,15 @@
     minimist "^1.2.0"
     rxjs "^5.5.2"
 
-"@angular/animations@^5.0.0":
+"@angular/animations@^5.0.3":
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-5.0.3.tgz#f08b07007b149fa12679c346fa55820f544b19e0"
+  dependencies:
+    tslib "^1.7.1"
+
+"@angular/cdk@^5.0.0-rc.2":
+  version "5.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-5.0.0-rc.2.tgz#65a76381a0481e92990af4a105cd3bcbc53ee2af"
   dependencies:
     tslib "^1.7.1"
 
@@ -138,6 +144,12 @@
 "@angular/language-service@^5.0.0":
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-5.0.3.tgz#e8c21581e0464ea50363e8f0d49d7b6a7e6b3cbf"
+
+"@angular/material@^5.0.0-rc.2":
+  version "5.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-5.0.0-rc.2.tgz#c96bb3295787aa84aa3788d776e15611f77a70ed"
+  dependencies:
+    tslib "^1.7.1"
 
 "@angular/platform-browser-dynamic@^5.0.0":
   version "5.0.3"

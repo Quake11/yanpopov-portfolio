@@ -1,0 +1,32 @@
+<ng-container *ngIf="media.isActive('lt-md'); then mobile else pc">
+</ng-container>
+
+<ng-template #mobile>
+  <mat-drawer-container class="example-container" autosize>
+
+    <mat-toolbar color="primary" style="height: 64px">
+      <button mat-icon-button (click)="drawer.toggle()" role="button" aria-label="Открыть">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1 class="mat-headline">{{ currentTitle }}</h1>
+    </mat-toolbar>
+    <mat-drawer #drawer class="example-sidenav" mode="over">
+      <mat-nav-list role="list" class="mobile">
+        <a mat-list-item role="listitem" *ngFor="let nav of navMenu" [routerLink]="nav.url" [ngClass]="{'active': currentUrl === nav.url}"
+          (click)="drawer.close()">
+          {{ nav.label }} </a>
+      </mat-nav-list>
+    </mat-drawer>
+    <router-outlet></router-outlet>
+  </mat-drawer-container>
+</ng-template>
+
+<ng-template #pc>
+  <main>
+    <mat-nav-list role="list" class="primary pc">
+      <a mat-list-item role="listitem" *ngFor="let nav of navMenu" [routerLink]="nav.url" [ngClass]="{'active': currentUrl === nav.url}">
+        {{ nav.label }} </a>
+    </mat-nav-list>
+    <router-outlet></router-outlet>
+  </main>
+</ng-template>

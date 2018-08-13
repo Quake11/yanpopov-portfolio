@@ -1,0 +1,38 @@
+.bg::after {
+  background-image: url('/assets/it/it-background.jpg');
+}
+
+.class-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-basis: unset !important;
+
+  a {
+    font-size: 3rem;
+    color: white;
+    width: 100%;
+    max-width: 90vw;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    transition: 300ms ease-out;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@mixin color-urls($count, $className, $startcolor, $percentage) {
+  $loop_color: $startcolor;
+  @for $i from 0 through $count {
+    $loop_color: darken($loop_color, $percentage);
+    .#{$className}-#{$i} {
+      background-color: $loop_color;
+    }
+  }
+}
+
+@include color-urls(6, 'class-url', #80cbc4, 5);

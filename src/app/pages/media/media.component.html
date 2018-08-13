@@ -1,0 +1,87 @@
+<main class="page-wrapper">
+  <section class="primary header">
+    <h1 class="mat-headline">Медиа</h1>
+    <img @fadeInFromBottom src="assets/svg/media_pic.svg" style="width: 190px" alt="Логотип страницы Медиа">
+  </section>
+
+  <section style="flex-direction: column" class="from-left" inViewport (inViewportAction)="onIntersection($event)">
+    <h2 class="mat-headline">Учёба в институте</h2>
+    <ngu-carousel [inputs]="carouselBanner" style="max-width: 90vw;" role="banner">
+      <ngu-item NguCarouselItem *ngFor="let video of learningVideos">
+        <div class="aspect-ratio">
+          <div class="preview" #preview (click)="updateSrc(videoFrame, video.url, preview)">
+            <img [src]="video.img" alt="Превью изображение для видео" />
+            <svg version="1.1" viewBox="0 0 68 48">
+              <path class="ytp-large-play-button-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                fill="#212121" fill-opacity="0.8"></path>
+              <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+            </svg>
+          </div>
+          <iframe #videoFrame frameborder="0" allowfullscreen></iframe>
+        </div>
+      </ngu-item>
+
+      <button NguCarouselPrev mat-mini-fab color="primary" class='leftRs' aria-label="Предыдущее видео">
+        <mat-icon>arrow_back_ios</mat-icon>
+      </button>
+      <button NguCarouselNext mat-mini-fab color="primary" class='rightRs' aria-label="Следующее видео">
+        <mat-icon>arrow_forward_ios</mat-icon>
+      </button>
+    </ngu-carousel>
+  </section>
+
+
+  <section style="flex-direction: column" class="primary from-right" inViewport (inViewportAction)="onIntersection($event)">
+    <h2 class="mat-headline">Работа в центре</h2>
+
+    <ngu-carousel [inputs]="carouselBanner" style="max-width: 90vw;" role="banner">
+      <ngu-item NguCarouselItem *ngFor="let video of workVideos">
+        <div class="aspect-ratio">
+          <div class="preview" #preview (click)="updateSrc(videoFrame, video.url, preview)">
+            <img [src]="video.img" alt="Превью изображение для видео" />
+            <svg version="1.1" viewBox="0 0 68 48">
+              <path class="ytp-large-play-button-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                fill="#212121" fill-opacity="0.8"></path>
+              <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+            </svg>
+          </div>
+          <iframe #videoFrame frameborder="0" allowfullscreen></iframe>
+        </div>
+      </ngu-item>
+
+      <button NguCarouselPrev mat-mini-fab color="primary" class='leftRs' aria-label="Предыдущее видео">
+        <mat-icon>arrow_back_ios</mat-icon>
+      </button>
+      <button NguCarouselNext mat-mini-fab color="primary" class='rightRs' aria-label="Следующее видео">
+        <mat-icon>arrow_forward_ios</mat-icon>
+      </button>
+    </ngu-carousel>
+  </section>
+
+  <section style="flex-direction: column" class="from-left" inViewport (inViewportAction)="onIntersection($event)">
+    <h2 class="mat-headline">Путешествия</h2>
+
+    <ngu-carousel [inputs]="carouselBanner" style="max-width: 90vw;" role="banner">
+      <ngu-item NguCarouselItem *ngFor="let video of travelVideos">
+        <div class="aspect-ratio">
+          <div class="preview" #preview (click)="updateSrc(videoFrame, video.url, preview)">
+            <img [src]="video.img" alt="Превью изображение для видео" />
+            <svg version="1.1" viewBox="0 0 68 48">
+              <path class="ytp-large-play-button-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                fill="#212121" fill-opacity="0.8"></path>
+              <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+            </svg>
+          </div>
+          <iframe #videoFrame frameborder="0" allowfullscreen></iframe>
+        </div>
+      </ngu-item>
+
+      <button NguCarouselPrev mat-mini-fab color="primary" class='leftRs' aria-label="Предыдущее видео">
+        <mat-icon>arrow_back_ios</mat-icon>
+      </button>
+      <button NguCarouselNext mat-mini-fab color="primary" class='rightRs' aria-label="Следующее видео">
+        <mat-icon>arrow_forward_ios</mat-icon>
+      </button>
+    </ngu-carousel>
+  </section>
+</main>

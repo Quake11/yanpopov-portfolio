@@ -1,0 +1,15 @@
+<main>
+  <section class="primary header">
+    <h1 class="mat-headline">Физика</h1>
+    <app-physics-device @fadeInFromBottom></app-physics-device>
+  </section>
+
+  <section>
+    <div class="class-list" [@list]="classes.length" role="list">
+      <a *ngFor="let class of classes; let i = index" [href]="class.url" [class]="'mat-elevation-z1 class-url-' + i" (mouseover)="mouseOver($event)"
+        (mouseout)="mouseOut($event)" target="_blank" role="listitem"> {{ class.name }}
+        <mat-icon svgIcon="external"></mat-icon>
+      </a>
+    </div>
+  </section>
+</main>

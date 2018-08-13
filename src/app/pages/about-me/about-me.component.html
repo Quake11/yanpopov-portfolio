@@ -1,0 +1,77 @@
+<main class="page-wrapper">
+  <section class="primary header">
+    <h1 class="mat-headline">Обо мне</h1>
+    <img @fadeInFromBottom src="assets/svg/bio_pic.svg" style="width: 190px" alt="Логотип страницы Обо мне">
+  </section>
+
+  <section>
+    <h2 class="mat-h2 from-bottom" inViewport (inViewportAction)="onIntersection($event)">Меня зовут Ян Александрович Попов, живу и работаю в г. Сыктывкар. Я учитель физики и информатики в Центре дистанционного
+      обучения детей инвалидов - филиале Республиканского центра образования.
+    </h2>
+    <img class="from-bottom" inViewport (inViewportAction)="onIntersection($event)" src="/assets/about-me/about-me-1.jpg" alt="">
+  </section>
+
+  <section class="primary from-bottom" inViewport (inViewportAction)="onIntersection($event)">
+    <img inViewport (inViewportAction)="onIntersection($event)" src="/assets/about-me/about-me-2.jpg" alt="">
+    <h2 class="mat-h2">Образование высшее-педагогическое. Закончил физико-математический факультет Коми пединститута в 2013 году.
+    </h2>
+  </section>
+
+  <section>
+    <h2 class="mat-h2 from-bottom" inViewport (inViewportAction)="onIntersection($event)">Одно время я работал в Коми республиканском лицее-интернате для одаренных детей из сельской местности, на должности воспитателя.
+    </h2>
+    <img inViewport (inViewportAction)="onIntersection($event)" class="from-bottom" src="/assets/about-me/about-me-3.jpg" alt="">
+  </section>
+
+  <section class="primary">
+    <img inViewport (inViewportAction)="onIntersection($event)" class="from-left" src="/assets/about-me/about-me-4-2.jpg" alt="">
+    <app-map inViewport [inViewportOptions]="{partial: true}" class="from-right" (inViewportAction)="animation.action($event, 3000, 'easingElasticOut', animation.jump)"></app-map>
+  </section>
+
+  <section>
+    <img inViewport (inViewportAction)="onIntersection($event)" class="from-left" src="/assets/about-me/about-me-4-1.jpg" alt="">
+    <h2 class="mat-h2 from-right" inViewport (inViewportAction)="onIntersection($event)">С самого детства увлекаюсь спортом, играю в волейбол. Совсем недавно начал заниматься туризмом, поднялся на гору Эльбрус
+      (высота 5642 метра).
+    </h2>
+  </section>
+
+  <section class="primary">
+    <h2 class="mat-h2 from-bottom" inViewport (inViewportAction)="onIntersection($event)">Занимаюсь 3D-моделированием, прототипированием и печатью на 3D-принтере.</h2>
+    <app-printer inViewport (inViewportAction)="animation.action($event, 1500)"></app-printer>
+  </section>
+
+  <section>
+    <img inViewport (inViewportAction)="onIntersection($event)" src="/assets/about-me/about-me-5.jpg" alt="">
+    <h2 class="mat-h2 from-bottom" inViewport (inViewportAction)="onIntersection($event)">Провожу занятия по 3D-моделированию и печати для учащихся в институте развития образования.</h2>
+  </section>
+
+  <section class="accent">
+    <h2 class="mat-h2 from-top" inViewport (inViewportAction)="onIntersection($event)">На сайте размещены: документы, методические разработки уроков, тесты и проверочные работы по информатике для обучающихся
+      5-11 классов, презентации к урокам, творческие работы учащихся и многое другое, что может оказаться интересным и полезным
+      для Вас!
+    </h2>
+    <div style="display: flex;flex-direction: column;" class="from-top" inViewport (inViewportAction)="onIntersection($event)">
+      <a mat-stroked-button color="primary" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSe7_Hx_WGwOEhW2NTfWD3fHUxPvJCKaQIM59_-yk__CN6Jemg/viewform"
+        style="margin: 0 0 20px">
+        Форма обратной связи
+      </a>
+      <h2 class="mat-h2">Связаться со мной можно по адресу:
+        <a href="mailto:yanpopov@gmail.com" target="_blank">yanpopov@gmail.com</a>
+      </h2>
+    </div>
+  </section>
+
+  <section class="accent">
+    <div class="social-links from-top" inViewport (inViewportAction)="onIntersection($event)">
+      <a href="https://twitter.com/YanPopov" target="_blank">
+        <img src="/assets/contacts/twitter.png" style="border-radius: 50%" alt="Twitter">
+      </a>
+      <a href="https://vk.com/id106054262" target="_blank">
+        <img src="/assets/contacts/vk.png" alt="ВКонтакте">
+      </a>
+      <a href="https://www.youtube.com/user/yan578" target="_blank">
+        <img src="/assets/contacts/youtube.png" alt="YouTube">
+      </a>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,111 @@
+#hello {
+  stroke: rgb(20, 190, 148);
+  stroke-width: 1;
+  height: 150px;
+  padding: 10px;
+  margin: 10px;
+  width: auto;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.header {
+  h2 {
+    font-family: 'Roboto Condensed', sans-serif !important;
+    text-align: center;
+  }
+}
+
+.subjects {
+  display: flex;
+  flex-wrap: wrap;
+
+  & a.subject {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    outline: none;
+    flex: 1 300px;
+    text-align: center;
+    border-radius: 25px;
+    margin: 25px;
+    transition: 300ms ease-out;
+    height: 400px;
+    max-width: 95vw;
+
+    h2 {
+      font-size: calc(2rem + 1vh);
+      color: #000;
+      margin-top: 20px;
+    }
+
+    &.it {
+      $it-color: #00796b;
+
+      app-macbook {
+        transition: 900ms ease-in-out;
+        animation-direction: both;
+        filter: saturate(0);
+
+        &.active {
+          filter: saturate(1);
+        }
+      }
+    }
+
+    &.physics {
+      $physics-color: #0288d1;
+
+      app-atom {
+        transition: 900ms ease-in-out;
+        filter: saturate(0);
+        animation-direction: both;
+
+        &.active {
+          filter: saturate(1);
+        }
+      }
+    }
+  }
+}
+
+main.xs .subject {
+  width: 90vw;
+}
+main.lt-md .subject,
+main.xs .subject {
+  app-atom,
+  img {
+    filter: none !important;
+  }
+}
+/*
+#printer #cover {
+    opacity: 1;
+} */
+
+/* app-atom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
+}
+ */
+
+app-macbook {
+  width: 100%;
+  height: 96px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+}
