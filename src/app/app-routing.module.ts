@@ -43,5 +43,6 @@ const routes: Routes = [
 ];
 
 export const appRouter: ModuleWithProviders = RouterModule.forRoot(routes, {
-  initialNavigation: 'enabled'
+  initialNavigation: 'enabled',
+  scrollPositionRestoration: 'enabled'
 });
